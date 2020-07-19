@@ -1,0 +1,33 @@
+.footer {
+    bottom: 0;
+    width : 100%;
+
+
+}
+
+.row {
+    padding        : 10px;
+    display        : flex;
+    justify-content: center;
+    color          : #939393;
+}
+
+.row .desc {
+    margin-right: 5px;
+}
+
+.row .link {
+    display        : inline-block;
+    text-decoration: none;
+    height         : 20px;
+    line-height    : 20px;
+
+}
+
+.row .num {
+    float      : left;
+    height     : 20px;
+    line-height: 20px;
+    margin     : 0px 0px 0px 5px;
+    color      : #939393;
+}

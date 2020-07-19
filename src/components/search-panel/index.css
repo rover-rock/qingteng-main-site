@@ -1,0 +1,13 @@
+.search-panel{
+    margin: 20px 10%;
+    padding: 20px;
+    background: white;
+    
+}
+
+.search-panel__left-field{
+    
+}
+.search-panel__right-field{
+    margin-right: 0 20px;
+}
