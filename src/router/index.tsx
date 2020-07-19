@@ -1,12 +1,12 @@
 import React from 'react'
-import { Router, RouteComponentProps } from "@reach/router";
+import { Router } from "@reach/router";
 import Home from "../pages/home";
 import OneReportPage from "../pages/one-report";
 export default () => {
     
     return (
         <Router>
-            <Home path="/*" />
+            <Home path="/*" /> 
             <OneReportPage path="one-report" />           
         </Router>
     )

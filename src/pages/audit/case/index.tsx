@@ -13,7 +13,7 @@ export default (props:RouteComponentProps) => {
     )
     const infoPanel = (
         <div>
-            info panel
+            case panel
         </div>
     )
     

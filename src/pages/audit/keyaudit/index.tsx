@@ -10,10 +10,15 @@ export default (props:RouteComponentProps) => {
             'timespan',
             'input:description:描述',
             'input:market:市场'
-        ]}></SearchPanel>
+        ]} ></SearchPanel>
     )
-    
+    const infoPanel = (
+        <div>
+            keyaudit panel
+        </div>
+    )
+
     return (
-       <Layout searchPanel={searchPanel}/>
+       <Layout searchPanel={searchPanel} infoPanel={infoPanel}/>
     )
 };

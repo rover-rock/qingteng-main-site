@@ -5,7 +5,7 @@ import routeConfig from "../../router/route-config";
 export default (props:RouteComponentProps) => {
 
     return (
-        <>
+        <> 
             <Header></Header>
             <Router>
                 {
