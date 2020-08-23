@@ -4,12 +4,15 @@ import Layout from "../../../components/layout";
 import SearchPanel from "../../../components/search-panel";
 export default (props:RouteComponentProps) => {
 
+    const handleSubmit = () => {
+
+    }
     const searchPanel = (
         <SearchPanel page={[
             'company',
             'timespan',
             'agency'
-        ]}></SearchPanel>
+        ]} onFinish={handleSubmit}></SearchPanel>
     )
     const infoPanel = (
         <div>

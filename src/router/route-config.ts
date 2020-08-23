@@ -15,11 +15,11 @@ const routes = [
                 path:'audit/keyaudit',
                 component: require('../pages/audit/keyaudit').default
             },
-            // {
-            //     title:'非标意见',
-            //     path:'audit/feibiao',
-            //     component: require('../pages/audit/feibiao').default
-            // },
+            {
+                title:'非标意见',
+                path:'audit/feibiao',
+                component: require('../pages/audit/feibiao').default
+            },
             // {
             //     title:'审计收费',
             //     path:'audit/fees',

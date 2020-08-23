@@ -1,0 +1,26 @@
+.info-panel{
+    margin: 0 10%;
+    padding: 20px;
+    background: white;
+}
+.info-panel__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info-panel__body__content{
+  margin: 0 20px;
+}
+.custom-collapse ,.ant-collapse .custom-collapse-panel {
+  background: white;
+  border-radius: 2px;
+  border: 0px;
+  overflow: hidden;
+}
+.info-panel .ant-collapse-content {
+  border:0;
+}
+.pager{
+  margin: 20px;
+    padding-bottom: 20px;
+}

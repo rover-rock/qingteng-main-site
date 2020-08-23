@@ -11,7 +11,7 @@ export default (props:RouteComponentProps) => {
                 {
                     routeConfig.map( r => {
                         const Com = r.component
-                        return <Com path={r.path}></Com>
+                        return <Com key={r.path} path={r.path}></Com>
                     })
                 }
             </Router>

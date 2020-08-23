@@ -8,7 +8,7 @@ export default (props:IProps) => {
     return (
         <>
             {props.searchPanel}
-            <div style={{height:'50px'}}></div>
+            {/* <div style={{height:'50px'}}></div> */}
             {props.infoPanel}
         </>
     )

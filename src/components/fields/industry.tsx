@@ -1,21 +1,21 @@
 import React, { useState, useCallback } from 'react'
 import { Form, Select, Spin } from "antd";
-import request from "../../util/request";
-import { delay } from 'util/func';
+import request from "util/request";
+import { delay } from  "util/func"
 
 const { Item: FormItem } = Form
 const { Option } = Select
-type Agency = {
-    agency:string
+type Industry = {
+    industry:string
 }
 
 export default (props: { className?: string,labelCol?:any }) => {
-    const [ data, setData ] = useState<Agency[]>([])
+    const [ data, setData ] = useState<Industry[]>([])
     const [ value, setValue ] = useState<string>()
     const [ fetching, setFetching ] = useState(false)
-    const fetchCompany = useCallback(delay(   ( name:string ) => {
+    const fetchIndustry =useCallback(delay( ( name:string ) => {
         setFetching(true)
-        request.get<Agency[]>('auto_complete/search_agency',{part:name}).then( data => {
+        request.get<Industry[]>('auto_complete/search_industry',{part:name}).then( data => {
             setData(data)
         }).finally(()=> {
             setFetching(false)
@@ -26,8 +26,8 @@ export default (props: { className?: string,labelCol?:any }) => {
     }
     return (
         <FormItem
-            label="事务所"
-            name="agency"
+            label="行业"
+            name="industry"
             className={props.className}
             labelCol={props.labelCol}
         >
@@ -36,15 +36,15 @@ export default (props: { className?: string,labelCol?:any }) => {
                 showSearch
                 showArrow={false}
                 value={value}
-                placeholder="请输入事务所名称"
+                placeholder="请输入行业名称"
                 notFoundContent={fetching ? <Spin size="small" /> : null}
                 filterOption={false}
-                onSearch={fetchCompany}
+                onSearch={fetchIndustry}
                 onChange={handleChange}
                 style={{ width: '100%' }}
             >
                 {data.map(d => (
-                    <Option key={d.agency} value={d.agency}>{d.agency}</Option>
+                    <Option key={d.industry} value={d.industry}>{d.industry}</Option>
                 ))}
             </Select>
         </FormItem>

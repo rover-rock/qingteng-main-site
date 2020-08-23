@@ -9,20 +9,18 @@ import { useFormQuery } from 'util/func';
 
 export default (props: RouteComponentProps) => {
 
-    const  { handleFinish, infoPanelStatus } = useFormQuery({url1:'audit-data/keyaudit',url2:'audit-data/keyaudit-total'})
+    const  { handleFinish, infoPanelStatus } = useFormQuery({url1:'audit-data/feibiao',url2:'audit-data/feibiao-total'})
     const handleShowDetail = () => {
 
     }
     const searchPanel = (
         <SearchPanel page={[
             'company',
-            'keyaudit_timespan',
+            'feibiao_timespan',
             'agency',
-            'industry',
-            'input:info:描述',
-            'input:reply:应对',
-            'input:title:标题',
-            'input:market:市场',
+            'feibiao_result',
+            'input:info:非标正文',
+            'market',
         ]}
             onFinish={handleFinish}
         ></SearchPanel>
@@ -31,7 +29,7 @@ export default (props: RouteComponentProps) => {
         <InfoPanel {...infoPanelStatus} header={ListItemHeader} content={ListItemContent} onClickItemButton={handleShowDetail} />
     )
     return (
-        <div className='keyaudit-page'>
+        <div className='feibiao-page'>
             <Layout searchPanel={searchPanel} infoPanel={infoPanel} />
         </div>
     )
