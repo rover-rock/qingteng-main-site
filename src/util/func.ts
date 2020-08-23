@@ -22,6 +22,7 @@ export const useFormQuery = < IQuery , IRes > ({url1,url2}:{url1:string,url2:str
     const [ loading,setLoading ] = useState(false)
     
     const handlePageChange = (page) => {
+        console.log('page change',page);
         setPage(page)
     }
     useEffect(() => {

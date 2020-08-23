@@ -5,7 +5,8 @@ import IndustryField from 'components/fields/industry'
 import getInputCom from 'components/fields/input'
 import KeyAuditTimeSpan from "components/fields/keyaudit_timespan";
 import FeibiaoTimeSpan from "components/fields/keyaudit_timespan";
-import FeibiaoResultType from "components/fields/feibiao_result_types";
+import FeibiaoResultType from "components/fields/fees_result_types";
+import FeesResultType from "components/fields/fees_result_types";
 import Market from "components/fields/market"
 
 import { JSXElementConstructor } from "react";
@@ -19,6 +20,7 @@ const NameFieldMap: { [key: string]: JSXElementConstructor<any> } = {
     'keyaudit_timespan':KeyAuditTimeSpan,
     'feibiao_timespan':FeibiaoTimeSpan,
     'feibiao_result':FeibiaoResultType,
+    'fees_result':FeesResultType,
 }
 
 export const getFieldCom = ( key:string ) => {
