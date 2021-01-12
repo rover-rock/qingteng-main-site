@@ -7,7 +7,7 @@ export default (props:{item: IData,onShowDetail}) => {
     const {item} = props
     const handleShowDetail = (e) => {
         e.stopPropagation()
-        props.onShowDetail()
+        props.onShowDetail(item)
     }
     return (
         <>
@@ -23,6 +23,10 @@ export default (props:{item: IData,onShowDetail}) => {
                     <Tooltip title="点击查看详情" placement="top">
                         <Button onClick={handleShowDetail}>查看详情</Button>
                     </Tooltip>
+                    {
+                        item.link ? <a href={item.link} target="_blank">源</a>
+                                    : <span>&nbsp;</span>
+                    }                
                 </div>
             </div>
         </>

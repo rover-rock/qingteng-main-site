@@ -1,0 +1,10 @@
+.collapse-panel {
+    padding: 15px 30px;
+    transition: height 1s, padding 0.3s;
+    .author {
+      background: gray;
+      color: white;
+      padding: 3px 7px;
+      border-radius: 5px;
+    }
+  }

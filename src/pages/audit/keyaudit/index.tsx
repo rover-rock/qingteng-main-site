@@ -1,17 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RouteComponentProps } from '@reach/router';
 import Layout from "components/layout";
 import SearchPanel from "components/search-panel";
 import InfoPanel from "components/info-panel";
 import ListItemHeader from './components/list-item-header';
 import ListItemContent from "./components/list-item-content";
-import { useFormQuery } from 'util/func';
+import DetailModal from './components/detail-model'
+import { useFormQuery, render_multi_keywords_red } from 'util/func';
+import { IData } from './type';
 
 export default (props: RouteComponentProps) => {
 
-    const  { handleFinish, infoPanelStatus } = useFormQuery({url1:'audit-data/keyaudit',url2:'audit-data/keyaudit-total'})
-    const handleShowDetail = () => {
-
+    const [ showModal, setShowModal ] = useState(false)
+    const [ itemData,setItemData ] = useState({})
+    const dataHandler = ( listData:IData[], keywords ) => {
+        return listData.map( item => ({
+            ...item,
+            info:render_multi_keywords_red(keywords.info,item.info),
+            title:render_multi_keywords_red(keywords.title,item.title),
+            reply:render_multi_keywords_red(keywords.reply,item.reply),
+        }))
+    }
+    const  { handleFinish, infoPanelStatus } = useFormQuery({url1:'audit-data/keyaudit',url2:'audit-data/keyaudit-total',dataHandler})
+    const handleShowDetail = (data) => {
+        setItemData(data)
+        setShowModal(true)
     }
     const searchPanel = (
         <SearchPanel page={[
@@ -31,8 +44,9 @@ export default (props: RouteComponentProps) => {
         <InfoPanel {...infoPanelStatus} header={ListItemHeader} content={ListItemContent} onClickItemButton={handleShowDetail} />
     )
     return (
-        <div className='keyaudit-page'>
+        <div>
             <Layout searchPanel={searchPanel} infoPanel={infoPanel} />
+            <DetailModal visible={showModal} setVisible={setShowModal} data={itemData} ></DetailModal>
         </div>
     )
 };

@@ -6,9 +6,16 @@ const { Option } = Select
 
 export default (props) => {
     const data = [
-        '保留意见',
-        '带强调事项段的无保留意见', 
-        '无法表示意见'
+        '12366',
+        '税务总局',
+        '河北',
+        '辽宁',
+        '上海',
+        '山西',
+        '浙江',
+        '内蒙古',
+        '吉林',
+        '黑龙江'
       ]
     const [ value,setValue ] = useState(data[0])
     const handleChange = (val )=> {
@@ -16,13 +23,13 @@ export default (props) => {
     }
     return (
         <FormItem
-            label="期间"
-            name="audit_result"
+            label="来源"
+            name="banner"
             className={props.className}
             labelCol={props.labelCol}
         >
             <Select   
-               allowClear
+                allowClear
                 value={value}
                 placeholder="请输入"
                 onChange={handleChange}

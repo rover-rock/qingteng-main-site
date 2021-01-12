@@ -31,6 +31,7 @@ export default (props) => {
                 placeholder="请选择"
                 onChange={handleChange}
                 style={{ width: '100%' }}
+                allowClear
             >
                 {data.map(d => (
                     <Option key={d} value={d}>{d}</Option>

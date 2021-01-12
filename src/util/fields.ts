@@ -8,6 +8,7 @@ import FeibiaoTimeSpan from "components/fields/keyaudit_timespan";
 import FeibiaoResultType from "components/fields/fees_result_types";
 import FeesResultType from "components/fields/fees_result_types";
 import Market from "components/fields/market"
+import WendaBanner from "components/fields/tax_wenda_banner"
 
 import { JSXElementConstructor } from "react";
 
@@ -21,6 +22,7 @@ const NameFieldMap: { [key: string]: JSXElementConstructor<any> } = {
     'feibiao_timespan':FeibiaoTimeSpan,
     'feibiao_result':FeibiaoResultType,
     'fees_result':FeesResultType,
+    'wenda_banner':WendaBanner,
 }
 
 export const getFieldCom = ( key:string ) => {
